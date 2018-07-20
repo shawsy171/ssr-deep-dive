@@ -2,6 +2,22 @@
 
 <https://github.com/StephenGrider/ReactSSRCasts>
 
+## Run
+
+```bash
+npm run dev
+```
+
+### Run server
+
+This will run all build scripts and start the server
+
+```bash
+npm run dev:server
+```
+
+starts the node server
+
 ## Build
 
 ### Build server
@@ -15,14 +31,6 @@ npm run dev:build:server
 ```bash
 npm run dev:build:client
 ```
-
-## Run
-
-```bash
-npm run dev:server
-```
-
-starts the node server
 
 ## get react code for rehydration
 
