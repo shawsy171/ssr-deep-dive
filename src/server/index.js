@@ -7,9 +7,9 @@ const PORT = 5010;
 // make public available to the browser
 app.use(express.static('public'));
 
-// main entry route
-app.get('/', (req, res) => {
-  res.send(renderer());
+// main entry route - handles all routes
+app.get('*', (req, res) => {
+  res.send(renderer(req));
 });
 
 app.listen(PORT, () => {
