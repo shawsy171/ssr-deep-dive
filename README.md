@@ -44,3 +44,7 @@ Webpack allows you to define externals - modules that should not be bundled.
 
 When bundling with Webpack for the backend - you usually don't want to bundle its node_modules dependencies.
 This library creates an externals function that ignores node_modules when bundling in Webpack.
+
+# API
+
+https://react-ssr-api.herokuapp.com/
