@@ -48,3 +48,7 @@ This library creates an externals function that ignores node_modules when bundli
 # API
 
 https://react-ssr-api.herokuapp.com/
+
+### users
+
+https://react-ssr-api.herokuapp.com/users
