@@ -26,9 +26,12 @@ const mapStateToProps = (state) => {
  * this will be called in the server/index.js file 
  * @param {object} store 
  */
-export const loadData = (store) => {
+const loadData = (store) => {
   // this is using the server side store
   return store.dispatch(fetchUsers());
 };
 
-export default connect(mapStateToProps, { fetchUsers })(UsersListPage);
+export default {
+  loadData,
+  component: connect(mapStateToProps, { fetchUsers })(UsersListPage),
+}

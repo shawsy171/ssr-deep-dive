@@ -5,14 +5,14 @@ import UsersListPage, { loadData } from './../client/pages/UsersListPage';
 
 const AppRoutes = [
   {
+    ...HomePage,
     path: '/',
-    component: HomePage,
     exact: true
   },
   {
-    loadData,
+    // UsersListPage is an object which contains the component and the loadData Function
+    ...UsersListPage,
     path: '/users',
-    component: UsersListPage,
   }
 ];
 
