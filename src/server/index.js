@@ -3,7 +3,7 @@ import express from 'express';
 
 // router
 import { matchRoutes } from 'react-router-config';
-import AppRoutes from './../shared/AppRoutes';
+import AppRoutes from '../shared/AppRoutes';
 
 // helpers
 import renderer from './helpers/renderer';

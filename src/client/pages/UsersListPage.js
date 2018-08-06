@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchUsers } from './../../shared/store/users/actions';
+import { fetchUsers } from '../../shared/store/users/actions';
 
-class UsersList extends Component {
+class UsersListPage extends Component {
   componentDidMount () {
     this.props.fetchUsers();
   }
@@ -10,7 +10,7 @@ class UsersList extends Component {
     const { users } = this.props;
     return (
       <div>
-        Here is big list of users
+        <h1>Here is big list of users</h1>
         <ul>
           { users.map((user) => <li key={user.id}>{user.name}</li> )}
         </ul>
@@ -31,4 +31,4 @@ export const loadData = (store) => {
   return store.dispatch(fetchUsers());
 };
 
-export default connect(mapStateToProps, { fetchUsers })(UsersList);
+export default connect(mapStateToProps, { fetchUsers })(UsersListPage);

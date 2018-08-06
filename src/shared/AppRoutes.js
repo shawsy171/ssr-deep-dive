@@ -1,18 +1,18 @@
 // these Routes are shared by both the client an server
 import React from 'react';
-import Home from './../client/components/Home';
-import UsersList, { loadData } from './../client/components/UsersList';
+import HomePage from './../client/pages/HomePage';
+import UsersListPage, { loadData } from './../client/pages/UsersListPage';
 
 const AppRoutes = [
   {
     path: '/',
-    component: Home,
+    component: HomePage,
     exact: true
   },
   {
     loadData,
     path: '/users',
-    component: UsersList,
+    component: UsersListPage,
   }
 ];
 
