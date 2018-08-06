@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 // router
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import AppRoutes from '../../shared/AppRoutes';
+import AppRoutes from '../../shared/routes/AppRoutes';
 
 /**
  * Server side render for react app

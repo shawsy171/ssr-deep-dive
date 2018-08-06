@@ -10,7 +10,7 @@ import { renderRoutes } from 'react-router-config';
 // redux
 import { Provider } from 'react-redux';
 import store from './createStore';
-import AppRoutes from './../shared/AppRoutes';
+import AppRoutes from './../shared/routes/AppRoutes';
 
 ReactDOM.hydrate(
   <Provider store={store}>
