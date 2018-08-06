@@ -34,7 +34,7 @@ app.get('*', (req, res) => {
     return route.loadData ? route.loadData(store) : null;
   })
 
-  console.log(promises);
+  
 
   /**
    * once all the promises have been resolved the data will be sent to the renderer
