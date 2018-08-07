@@ -1,5 +1,9 @@
 import 'babel-polyfill';
 import express from 'express';
+import proxy from 'express-http-proxy';
+
+// config
+import config from './../shared/config';
 
 // router
 import { matchRoutes } from 'react-router-config';
@@ -11,6 +15,15 @@ import createReduxStore from './helpers/createStore';
 
 const app = express();
 const PORT = 5010;
+
+// use proxy for API calls
+app.use('/api', proxy(config.API_URL, {
+  // this is just for this course's api
+  proxyReqOptDecorator(opts) {
+    opts.header['x-forwarded-host'] = 'localhost:3000';
+    return opts;
+  }
+}));
 
 // make public available to the browser
 app.use(express.static('public'));
