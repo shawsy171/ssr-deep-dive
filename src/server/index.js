@@ -20,7 +20,7 @@ const PORT = 5010;
 app.use('/api', proxy(config.API_URL, {
   // this is just for this course's api
   proxyReqOptDecorator(opts) {
-    opts.header['x-forwarded-host'] = 'localhost:3000';
+    opts.headers['x-forwarded-host'] = 'localhost:' + PORT;
     return opts;
   }
 }));
@@ -30,7 +30,7 @@ app.use(express.static('public'));
 
 // main entry route - handles all routes
 app.get('*', (req, res) => {
-  const store = createReduxStore()
+  const store = createReduxStore(req)
 
   /**
    * e.g. if the path is /users 

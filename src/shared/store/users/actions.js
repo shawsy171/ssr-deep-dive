@@ -1,12 +1,10 @@
-import axios from 'axios';
-import config from './../../config';
-
 // ACTION TYPES
 export const FETCH_USERS = 'FETCH_USERS'
 
 // ACTION CREATORS
-export const fetchUsers = () => async (dispatch) => {
-  const response = await axios.get(config.API_URL + '/users');
+// api is are axiosInstance
+export const fetchUsers = () => async (dispatch, getState, api) => {
+  const response = await api.get('/users');
   dispatch({
     type: FETCH_USERS,
     payload: response
