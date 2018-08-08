@@ -1,9 +1,14 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config'
+
+// components
+import Header from './components/Header';
+
+// route is coming from 'react-router-config' supplied in AppRoutes.js
 const App = ({ route }) => {
   return (
     <div>
-      <h1>Im a header</h1>
+      <Header />
       {renderRoutes(route.routes)}
     </div>
   )
