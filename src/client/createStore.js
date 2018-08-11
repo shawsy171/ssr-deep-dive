@@ -1,12 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { reducers } from './../shared/store/storeConfig';
-import axios from 'axios';
+import { createAxiosInstance } from './api';
 
 // here we create a custom instance of axios for use on the client
-const axiosInstance = axios.create({
-  baseURL: '/api'
-});
+const axiosInstance = createAxiosInstance;
 
 const initalState = window.INITIAL_STATE;
 

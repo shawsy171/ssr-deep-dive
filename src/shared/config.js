@@ -1,5 +1,5 @@
 const config = {
-  API_URL: 'https://react-ssr-api.herokuapp.com'
-}
+  API_URL: 'http://react-ssr-api.herokuapp.com'
+};
 
 export default config;

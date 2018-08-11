@@ -14,7 +14,7 @@ import renderer from './helpers/renderer';
 import createReduxStore from './helpers/createStore';
 
 const app = express();
-const PORT = 5010;
+const PORT = 3000;
 
 // use proxy for API calls
 app.use('/api', proxy(config.API_URL, {
