@@ -7,6 +7,7 @@ import UsersListPage from './../../client/pages/UsersListPage';
 const AppRoutes = [
   {
     ...App,
+    // these routes are accessible in the App component
     routes: [
       {
         ...HomePage,

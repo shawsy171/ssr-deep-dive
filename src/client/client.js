@@ -15,7 +15,7 @@ import AppRoutes from './../shared/routes/AppRoutes';
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>
-    <div>{renderRoutes(AppRoutes)}</div>
+      <div>{renderRoutes(AppRoutes)}</div>
     </BrowserRouter>
   </Provider>
   , document.getElementById('root')

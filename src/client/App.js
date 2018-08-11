@@ -1,5 +1,6 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config'
+import { fetchCurrentUser } from './../shared/store/auth/actions';
 
 // components
 import Header from './components/Header';
@@ -13,7 +14,9 @@ const App = ({ route }) => {
     </div>
   )
 }
+const loadData = (store) => store.dispatch(fetchCurrentUser());
 
 export default {
+  loadData,
   component: App
 }

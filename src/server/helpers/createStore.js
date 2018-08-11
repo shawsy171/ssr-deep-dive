@@ -12,11 +12,11 @@ const createReduxStore = (req) => {
   const axiosInstance = axios.create({
     baseURL: config.API_URL,
     headers: { cookie: req.get('cookie') || '' }
-  })
+  });
   // withExtraArgument allows us to pass an argument to are action creator
   const store = createStore(reducers, initalState, applyMiddleware(thunk.withExtraArgument(axiosInstance)));
 
   return store;
-}
+};
 
 export default createReduxStore;
