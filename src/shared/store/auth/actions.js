@@ -8,5 +8,5 @@ export const fetchCurrentUser = () => async (dispatch, getState, api) => {
   dispatch({
     type: FETCH_CURRENT_USERS,
     payload: response
-  })
-}
+  });
+};

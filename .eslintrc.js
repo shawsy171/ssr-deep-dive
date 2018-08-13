@@ -33,6 +33,11 @@ module.exports = {
         "semi": [
             "error",
             "always"
+        ],
+        "indent": [
+            "error", 
+            2, 
+            { "SwitchCase": 1 }
         ]
     }
 };

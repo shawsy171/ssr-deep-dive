@@ -12,10 +12,12 @@ import AppRoutes from '../../shared/routes/AppRoutes';
  * @param {object} req // request object from express
  * @param {object} store // redux store
  */
-const renderer = (req, store) => {
+const renderer = (req, store, context) => {
   const content = renderToString(
     <Provider store={store}>
-      <StaticRouter location={req.path} context={{}}>
+
+      {/* the context object is passed to any component that is rendered by the StaticRouter */}
+      <StaticRouter location={req.path} context={context}>
         <div>{ renderRoutes(AppRoutes)}</div>
       </StaticRouter>
     </Provider>

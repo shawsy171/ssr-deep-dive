@@ -3,6 +3,8 @@
 import App from './../../client/App';
 import HomePage from './../../client/pages/HomePage';
 import UsersListPage from './../../client/pages/UsersListPage';
+import NotFoundPage from './../../client/pages/NotFoundPage';
+import AdminsListPage from './../../client/pages/AdminsListPage';
 
 const AppRoutes = [
   {
@@ -18,6 +20,13 @@ const AppRoutes = [
         // UsersListPage is an object which contains the component and the loadData Function
         ...UsersListPage,
         path: '/users',
+      },
+      {
+        ...AdminsListPage,
+        path: '/admins'
+      },
+      {
+        ...NotFoundPage
       }
     ]
   }

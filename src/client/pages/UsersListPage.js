@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { fetchUsers } from '../../shared/store/users/actions';
 
 class UsersListPage extends Component {
@@ -15,9 +16,14 @@ class UsersListPage extends Component {
           { users.map((user) => <li key={user.id}>{user.name}</li> )}
         </ul>
       </div>
-    )
+    );
   }
 }
+
+UsersListPage.propTypes = {
+  fetchUsers: PropTypes.func,
+  users: PropTypes.array,
+};
 
 const mapStateToProps = (state) => {
   return { users: state.users };
@@ -34,4 +40,4 @@ const loadData = (store) => {
 export default {
   loadData,
   component: connect(mapStateToProps, { fetchUsers })(UsersListPage),
-}
+};
