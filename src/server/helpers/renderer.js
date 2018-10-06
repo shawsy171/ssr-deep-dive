@@ -1,11 +1,16 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
+
+// serialize is used to turn the data into JSON/Javascript (and sanitize the data too)
 import serialize from 'serialize-javascript';
+
 // router
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import AppRoutes from '../../shared/routes/AppRoutes';
+
+import { Helmet } from 'react-helmet';
 
 /**
  * Server side render for react app
@@ -23,11 +28,13 @@ const renderer = (req, store, context) => {
     </Provider>
   );
 
+  const helmet = Helmet.renderStatic();
+
   return `
     <html>
       <head>
-        <title>SSR</title>
-        
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
         <!-- Import Google Icon Font -->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Import materialize.css -->
